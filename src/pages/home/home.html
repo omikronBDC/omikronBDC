@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+        <img src="assets/imgs/header/logo.png" height="30">
+      </button>
+    </ion-buttons>
+    <ion-title>Mi Visita</ion-title>
+    <!-- <ion-buttons end>
+    <button ion-button (click)="notify()">
+    <img src="assets/imgs/home/notification.png" height="15">
+    </button>
+  </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button (click)="profile()">
+        <img src="assets/imgs/profile-user.png" height="22">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="segment_nw">
+    <ion-segment [(ngModel)]="typ">
+      <ion-segment-button value="day" (click)="filter('Today')">
+        Dia
+      </ion-segment-button>
+      <ion-segment-button value="week" (click)="filter('Week')">
+        Semana
+      </ion-segment-button>
+      <ion-segment-button value="month" (click)="filter('Month')">
+        Mes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <!-- <input id="year">
+<input id="month"> -->
+  <div>
+    <ion-calendar #calendar1 [events]="visitEvents" [newevents]="dateselected" (onMonthSelect)="onMonthSelect($event)"
+      (onDaySelect)="onDaySelect($event)"></ion-calendar>
+  </div>
+
+  <!--  <ion-grid no-padding class="grid_calender">
+
+<ion-row>
+  <ion-col col-12 text-center>
+        <h3 class="card-header" id="monthAndYear"></h3>
+  </ion-col>
+</ion-row>
+  <div class="table table-bordered table-responsive-sm" id="calendar">
+    <ion-row>
+      <ion-col col no-padding style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Mon</button>
+      </ion-col> 
+      <ion-col col no-padding  style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Tue</button>
+      </ion-col> 
+      <ion-col col no-padding  style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Wed</button>
+      </ion-col> 
+      <ion-col col no-padding style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Thu</button>
+      </ion-col> 
+      <ion-col col no-padding  style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Fri</button>
+      </ion-col> 
+      <ion-col col no-padding  style="padding-right: 2px !important;">
+        <button no-margin small ion-button class="btn_day">Sat</button>
+      </ion-col> 
+      <ion-col col no-padding>
+        <button no-margin small ion-button class="btn_day">Sun</button>
+      </ion-col>
+      </ion-row>
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+      <ion-row style="padding: 0 0;" id="calendar-body" 
+      class="table table-bordered table-responsive-sm">
+        <ion-col col-auto >
+          <h3 class="date active">1
+            <span class="visit">3 Visit</span>
+          </h3>
+        </ion-col>
+      </ion-row>
+  </div>
+
+  </ion-grid> -->
+
+  <h3 class="heading_main">Lista de proximas visitas</h3>
+  <div class="user" *ngFor="let c of clients">
+    <ion-row>
+      <ion-col col-12>
+        <ion-item no-lines [ngClass]="c.visit_data.is_clicked?'highlite-content':''">
+          <h6 class="heading_int" (click)="details(c.client)">{{c.client.client_name}}</h6>
+          <p (click)="details(c.client)">
+            <img src="assets/imgs/home/location-active.png">
+            {{c.client.permanent_location}}</p>
+          <p class="color" (click)="details(c.client)">
+            <img src="assets/imgs/home/calender.png">
+            {{c.visit_data.visite_date}}</p>
+
+          <p class="color color_2" style="text-decoration: underline;"
+            *ngFor="let p of c.client.client_contact | slice: 0:1" (click)="calling(p.phone)">
+            <img src="assets/imgs/home/phone.png"><span>{{p.phone}}</span>({{p.name}})</p>
+
+          <!-- <p class="color color_2"><img src="assets/imgs/home/phone.png"><span>+91524658452</span> John Smith</p> -->
+          <button ion-button color="primary" small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="sales(c)"><img src="assets/imgs/check.png">Finalizar visita</button>
+
+          <!-- <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;" 
+            (click)="next1()">next visit</button> -->
+
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="product(c)">Lanzar pedido</button>
+
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="rechedule(c)">Reagendar Visita</button>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row *ngIf="clients.length==0" margin-top>
+    <ion-col col-12 text-center>
+      <div class="noDatadiv">
+        <ion-icon name="ios-search-outline"></ion-icon>
+        <p>Sin registros encontrados!</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

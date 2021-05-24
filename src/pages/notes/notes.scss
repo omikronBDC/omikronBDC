@@ -1,0 +1,38 @@
+page-notes {
+    .message input {
+        background: #f4f1f1;
+        min-height: 40px;
+        padding: 10px;
+        margin: 0;
+        color: #000000;
+        width: 100%;
+    }
+    .message .item {
+        min-height: 40px;
+        border: none;
+    }
+    .message {
+        //position: fixed;
+        border: 0;
+        bottom: 57px;
+        width: 100%;
+    }
+    .message img {
+        position: absolute;
+        right: 15px;
+        bottom: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    .scroll-content{
+        padding-bottom: 44px !important;
+    }
+
+    .list-ios {
+        margin: 0 !important;
+    }
+
+    .list-md {
+        margin: 0 !important;
+    }
+}

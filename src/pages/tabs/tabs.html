@@ -1,0 +1,7 @@
+<ion-tabs  (ionChange)="tabChanged($event)">
+    <ion-tab [root]="tab1Root" tabTitle="Mi Visita" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Proximos" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="tab3Root" [rootParams]="params" tabTitle="Clientes" tabIcon="contacts"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Productos" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab5Root" tabTitle="Notícias" tabIcon="information-circle"></ion-tab>
+</ion-tabs>

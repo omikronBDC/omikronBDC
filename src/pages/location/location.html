@@ -1,0 +1,99 @@
+<!--
+  Generated template for the LocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="">
+    <ion-buttons start>
+      <!-- <button *ngIf="isSearch==false" (click)="viewCtrl.dismiss()" ion-button icon-only > <ion-icon name="arrow-back"></ion-icon></button> -->
+      <button *ngIf="isSearch==true" (click)="isSearch=false" ion-button icon-only>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="isSearch==false">Proximos</ion-title>
+    <ion-input *ngIf="isSearch==true" [(ngModel)]="autocomplete.input" (input)="updateSearchResults($event)" #focusInput
+      placeholder="Ubicación de búsqueda" class="searchinput" type="text"></ion-input>
+    <ion-buttons end *ngIf="isSearch==false">
+      <button (click)="search()" ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="isSearch==false">
+      <button ion-button item-end clear menuToggle>
+        <img src="assets/imgs/filter.png" height="35">
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-searchbar (ionInput)="getItems($event)" placeholder="" no-lines></ion-searchbar> -->
+  <div id="map" class="fullscreen">
+
+  </div>
+  <ion-list inset class="locationsearch">
+    <button ion-item detail-none *ngFor="let place of autocompleteItems" (click)="selectSearchResult(place)">
+      <p>{{place.description}}</p>
+    </button>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="light" (click)="getCurrentLocation()">
+      <ion-icon name="md-locate" color="primary"></ion-icon>
+    </button>
+  </ion-fab>
+  <!-- <ion-item class="filter_item" no-lines> 
+    
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="" no-lines></ion-searchbar>
+    <button ion-button item-end clear menuToggle>
+      <img src="assets/imgs/filter.png" height="35">
+    </button>
+    
+</ion-item>
+
+
+<div class="user user_2">
+  <ion-row>
+       <ion-col col-12>
+         <ion-item no-lines>
+          <h6 class="heading_int">Client Name</h6>
+          <p><img src="assets/imgs/home/phone.png">+915245846320 John Smith</p>
+          <p><img src="assets/imgs/home/location-active.png">315, Pukhraj Corporate, indore</p>
+          <p class="color"><img src="assets/imgs/home/calender.png">08-Sept-2020</p>
+         
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 9px;" (click)="sales()">Sales Note</button>
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 9px;" (click)="next()">next visit</button>
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 9px;" (click)="product()">Place order</button>
+          
+  </ion-item>
+</ion-col>
+</ion-row>
+  </div>
+ 
+
+  <div class="user">
+    <ion-row>
+         <ion-col col-12>
+           <ion-item no-lines>
+            <h6 class="heading_int">Client Name</h6>
+            <p><img src="assets/imgs/home/phone.png">+915245846320 John Smith</p>
+            <p><img src="assets/imgs/home/phone.png">+915245846320 Aaron</p>
+            <p><img src="assets/imgs/home/phone.png">+915245846320 Beat</p>
+            <p><img src="assets/imgs/home/location-active.png">315, Pukhraj Corporate, indore</p>
+            <p class="color"><img src="assets/imgs/home/calender.png">08-Sept-2020</p>
+           
+            <button ion-button color="primary" small style="border-radius: 0;font-size: 9px;" ><img src="assets/imgs/check.png"> Mark as complete</button>
+            <button ion-button color="primary" outline small style="border-radius: 0;font-size: 9px;" (click)="next()">next visit</button>
+            <button ion-button color="primary" outline small style="border-radius: 0;font-size: 9px;" (click)="product()">Place order</button>
+            
+    </ion-item>
+  </ion-col>
+</ion-row>
+    </div> -->
+
+
+</ion-content>

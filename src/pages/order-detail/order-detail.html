@@ -1,0 +1,120 @@
+<!--
+  Generated template for the OrderDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Detalle del pedido</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div *ngFor="let o of orders">
+
+    <p style="background: #fff;margin: 0;padding: 16px;">
+      <b>Nombre de cliente</b> : <b>{{o.client_name}}</b><br>
+      <b>Fecha de pedido</b> : {{o.create_date}} <br>
+     <span *ngIf="visit_data.length>0"><b>Fecha de visita</b> : {{visit_data[0].visit_data.visite_date}} </span> 
+    </p>
+
+    <ion-row *ngIf="visit_data.length>0">
+      <ion-col col-12 style="font-size: large;"><strong>Detalles de visita</strong></ion-col>
+    </ion-row>
+    <div class="user" *ngFor="let c of visit_data">
+      <ion-row>
+           <ion-col col-12>
+             <ion-item>
+              <h6 class="heading_int">{{c.client.client_name}}</h6>
+              <p>
+                <img src="assets/imgs/home/location-active.png">
+              {{c.client.permanent_location}}</p>
+              <p class="">
+                <img src="assets/imgs/home/calender.png">
+              {{c.visit_data.visite_date}}</p>
+  
+              <p class="color_2" style="text-decoration: underline;"
+              *ngFor="let p of c.client.client_contact | slice: 0:1" 
+              (click)="calling(p.phone)">
+                <img src="assets/imgs/home/phone.png"      
+              ><span>{{p.phone}}</span>({{p.name}})</p>
+              
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  </div>
+
+    <ion-row margin-bottom>
+      <ion-col col-12 style="font-size: large;"><strong>Detalle del pedido</strong></ion-col>
+    </ion-row>
+    <div class="user">
+
+      <ion-row style="background: #fff;">
+        <!-- <ion-col col-4 no-padding>
+          <ion-item no-lines>
+           <h6 class="heading_int">Note :</h6>
+           <p style="white-space: normal;font-size: 12px;line-height: 17px;">{{o.add_not}}</p>
+           </ion-item>
+          </ion-col> -->
+ <ion-col col-12 no-padding>
+   <ion-item no-padding class="avtar_item avtar_item_right" *ngFor="let p of o.order_item">
+     <ion-avatar item-start>
+       <div class="img_avtar">
+       <img src="assets/imgs/user.png">
+     </div> 
+     </ion-avatar>
+   
+ 
+     <h2>{{p.product_name}}</h2>
+     <!-- <p>Quantity: {{k.item_qty}}</p>
+     <p>{{k.item_title}} - price XEUR</p>
+    <button ion-button smaall clear item-end><b style="color: #000;">€{{k.item_price}}</b></button> -->
+    <ion-item  no-padding class="avtar_item avtar_item_right item-con" *ngFor="let k of p.items" no-lines>
+      <!-- <p>Quantity: {{k.item_qty}}</p>
+      <p>{{k.item_title}} - price XEUR</p> -->
+
+      <!-- <h2>{{p.product_name}}</h2> -->
+      <p>{{k.product_title}} X {{k.item_qty}} X {{k.product_unit}}</p>
+
+     <button ion-button smaall clear item-end><b style="color: #000;">€{{k.item_total_price  | number : '1.0-2'}}</b></button>
+     </ion-item>
+   </ion-item>
+ </ion-col>
+ <!-- <ion-col col-12 no-padding>
+   
+ </ion-col> -->
+    </ion-row>
+        <ion-item no-lines style="padding: 0 16px;" class="total">
+          <p style="margin: 0;"><b>Total</b></p>
+          <p style="margin: 0;" item-end><b>€{{o.total_cost | number : '1.0-2'}}</b></p>
+        </ion-item> 
+          </div>
+
+          <ion-row>
+            <ion-col col-6 text-center align-items-center>
+              <h5>Imagenes del producto</h5>
+            </ion-col>
+            <ion-col col-6 text-center align-items-center>
+                <h5>Firma</h5>
+          </ion-col>            
+          </ion-row>
+          <ion-row>
+              <ion-col col-6 text-center align-items-center>
+                  <img [src]="o.image" alt="">
+                </ion-col>
+                <ion-col col-6 text-center align-items-center>
+                    <img [src]="o.signature" alt="">
+                  </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-2 no-padding  text-center align-items-center>
+                   <h4>Nota :</h4>
+              </ion-col>
+              <ion-col col-10 text-left align-items-center>
+                  <p>{{o.add_not}}</p>
+              </ion-col>
+          </ion-row>
+          
+      </div>
+</ion-content>

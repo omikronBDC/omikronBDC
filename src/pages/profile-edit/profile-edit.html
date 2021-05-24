@@ -1,0 +1,97 @@
+<!--
+  Generated template for the ProfileEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="primary">
+	  <ion-buttons start>
+			  <button ion-button clear icon-only style="margin:0px 10px;">
+		  <img src="assets/imgs/header/logo.png" height="30">
+		</button>
+  </ion-buttons>
+  <ion-title>Perfil Editar</ion-title>  
+  </ion-navbar>
+  </ion-header>
+
+<ion-content class="back_img" no-padding>
+  <div class="bg" padding>
+    
+    <!-- <div class="Image_create">
+      <ion-item no-lines class="chat_item">
+        <ion-avatar item-start style="width: 100%;">
+          <div class="user_img">
+            <img src="assets/imgs/Available.png">
+            <img class="camera" src="assets/imgs/csamera.png">
+        </div>
+        </ion-avatar></ion-item>
+    </div> -->
+
+  
+    <ion-list lines="none">
+    <div class="box">
+      <label>Nombre completo</label>
+    <ion-item no-padding>
+      <ion-input style="color: #333333;" type="text" placeholder="" [(ngModel)]="name">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <label>Email</label>
+    <ion-item no-padding>
+      <ion-input style="color: #333333;" type="email" readonly [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <label>Genero</label>
+    <ion-item no-padding>
+      	<ion-select [(ngModel)]="gender">
+	      <ion-option value="male">Male</ion-option>
+	      <ion-option value="female">Female</ion-option>
+    	</ion-select>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <label>Fecha de nacimiento</label>
+    <ion-item no-padding>
+      	<ion-datetime [(ngModel)]="dob" [max]="max"></ion-datetime>
+    </ion-item>
+  </div>
+
+  <div class="box">
+    <label>Region</label>
+    <ion-item no-padding>
+      <ion-input style="color: #333333;" type="text" readonly [(ngModel)]="region">
+      </ion-input>
+    </ion-item>
+  </div>
+
+   <div class="box">
+    <label>Teléfono</label>
+    <ion-item no-padding>
+      <ion-input style="color: #333333;" type="number" readonly [(ngModel)]="phone">
+      </ion-input>
+    </ion-item>
+  </div>
+
+  <div class="box" style="display:none">
+    <label>Nombre de compañía</label>
+    <ion-item no-padding>
+      <ion-input style="color: #333333;" type="text" readonly [(ngModel)]="c_name">
+      </ion-input>
+    </ion-item>
+  </div>
+    </ion-list>   
+
+
+  <button class="login_button" ion-button block color="primary" (click)="update()"
+  style="font-size: 16px;">Actualizar</button>
+
+
+   </div>
+</ion-content>

@@ -1,0 +1,179 @@
+<!--
+  Generated template for the AddclientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+
+
+
+  <div class="login_form">
+
+    <button ion-button icon-only (click)="closemodal()" small clear class="btn_close">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+
+    <ion-list no-lines>
+
+      <h3 class="heading">Añadir nuevo cliente</h3>
+
+      <label>Nombre de cliente</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="" [(ngModel)]="c_name" placeholder="Nombre de cliente">
+      </ion-item>
+
+      <label>ID</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="ID de cliente" [(ngModel)]="client_id" readonly>
+      </ion-item>
+
+      <label>Tipo de cliente</label>
+      <ion-item class="input_1" no-lines style="background: #f1f1f1; border-radius:5px;">
+        <ion-label>Tipo de cliente</ion-label>
+        <ion-select [(ngModel)]="c_type">
+          <ion-option [value]="item.id" *ngFor="let item of clientTypeList">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <label>Region</label>
+      <ion-item class="input_1" no-lines style="background: #f1f1f1; border-radius:5px;">
+        <ion-label>Selecciona Region</ion-label>
+        <ion-select [(ngModel)]="region">
+          <ion-option [value]="r.id" *ngFor="let r of resions">{{r.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- (click)="billingOpenAutofillPlaces()" -->
+      <label>Dir. de facturación</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="Dir. de facturación" [(ngModel)]="bill_address">
+      </ion-item>
+
+      <!-- <label>Post Code (Billing Address)</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="number" placeholder="Billing Address Post Code" [(ngModel)]="bill_postcode">
+      </ion-item> -->
+
+      <!-- (click)="shippingOpenAutofillPlaces()" -->
+      <label>Dir. de entrega</label> 
+      <button clear ion-button small class="copy_address" (click)="copy_address()">
+        Copiar dirección de facturación</button>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="Dir. de entrega" [(ngModel)]="ship_address">
+      </ion-item>
+
+      <!-- <label>Post Code (Delivery Address)</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="number" placeholder="Delivery Address Post Code" [(ngModel)]="deliver_postcode">
+      </ion-item> -->
+
+      <label>Num. Telefono</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="number" placeholder="Num. Telefono" [(ngModel)]="phone">
+      </ion-item>
+
+
+      <label>Email de cliente</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="Email de cliente" [(ngModel)]="c_email">
+      </ion-item>
+
+      <!-- (click)="map_view()" -->
+      <ion-row align-items-center>
+        <!-- <ion-col col-10>
+          <label>Current Location</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <input type="text" placeholder="Location" [(ngModel)]="loaction" (keyup)="ibam_fill($event)">
+          </ion-item>
+        </ion-col> -->
+
+        <ion-col col-10>
+          <label>Localización (Lat,Long)</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <input type="text" placeholder="latitud,longitud" [(ngModel)]="latlng" readonly>
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col col-5>
+          <label>Current Longitude</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <input type="number" placeholder="Longitude" [(ngModel)]="lng" readonly>
+          </ion-item>
+        </ion-col> -->
+
+        <ion-col col-2>
+          <label style="color: #fff;">l</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <button ion-button clear style="height: auto;" (click)="map_view()">
+              <img src="assets/imgs/footer/location-active.png" width="30px">
+            </button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row>
+        <ion-col col-6>
+          <label>Current Location Latitude</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <input type="number" placeholder="Latitude" [(ngModel)]="lat" readonly>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <label>Current Location Longitude</label>
+          <ion-item class="input_1" no-lines no-padding>
+            <input type="number" placeholder="Longitude" [(ngModel)]="lng" readonly>
+          </ion-item>
+        </ion-col>
+      </ion-row> -->
+      <!-- 
+      <label>Zip Code</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="number" placeholder="Zip Code" [(ngModel)]="zipcode">
+      </ion-item> -->
+
+      <label>IBAN</label>
+      <ion-item class="input_1" no-lines no-padding>
+        <input type="text" placeholder="IBAN" [(ngModel)]="iban">
+      </ion-item>
+
+
+
+
+      <ion-item no-padding>
+        <h3 class="nw_heading">Otra persona de contacto</h3>
+        <button ion-button item-end clear style="height: auto;" (click)="add_person()">
+          <img src="assets/imgs/plus.png" width="20px">
+        </button>
+      </ion-item>
+
+      <div *ngFor="let o of other_contact_person;let i=index">
+        <button ion-button item-end clear *ngIf="i>0" style="height: auto;float: right;" (click)="minus_person(i)">
+          <img src="assets/imgs/minus.png" width="20px">
+        </button>
+        <label>Nombre</label>
+        <ion-item class="input_1" no-lines no-padding>
+          <input type="text" placeholder="Nombre" [(ngModel)]="o.name">
+        </ion-item>
+
+        <label>Num. Telefono</label>
+        <ion-item class="input_1" no-lines no-padding>
+          <input type="number" placeholder="Num. Telefono" [(ngModel)]="o.number">
+        </ion-item>
+      </div>
+
+    </ion-list>
+
+
+
+
+    <ion-row style="justify-content: center;" no-padding>
+      <ion-col col-4>
+        <button ion-button color="primary" block (click)="add_client()">Añadir</button>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+
+</ion-content>

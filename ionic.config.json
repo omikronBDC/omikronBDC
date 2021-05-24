@@ -1,0 +1,7 @@
+{
+  "name": "ventapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

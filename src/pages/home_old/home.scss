@@ -1,0 +1,288 @@
+// page-home {
+
+//     ion-calendar .calendar-row .calendar-col {
+//        // background: #cb1a34;
+//       //  color: white;
+//     }
+
+//     ion-calendar .calendar-row .eventBlip {
+//         // background:transparent !important;
+//     }
+
+//     ion-calendar .calendar-row .today {
+//         box-shadow: inset 0 0 10px #f76565 !important;
+//         background: #f76565 !important;
+//     }
+
+//     .highlite-content {
+//         box-shadow: 0px 0px 15px #cb1a34;
+//     }
+
+//     ion-calendar .calendar-row .select {
+//         -webkit-box-shadow: none;
+//         box-shadow: none;
+//         //  color: #fff !important;
+//         //  background: #cb1a34 !important;
+//         color: black !important;
+//         background: #ffffff !important;
+//     }
+
+//     ion-calendar .calendar-row .select1 {
+//         -webkit-box-shadow: none;
+//         box-shadow: none;
+//          color: #fff !important;
+//          background: #cb1a34 !important;
+//     //    color: black !important;
+//     //    background: #ffffff !important;
+//     }
+//     .show-date{
+//         padding: 0 25px !important;
+//     }
+//     .content {
+//         background: #e1e1e1;
+//     }
+//   .toolbar-background-ios {
+//         background: map-get($colors, primary);
+//     }
+//     .toolbar-title {
+//         font-weight: normal !important;
+//         color: white !important;
+//     }
+//     .searchbar-ios.searchbar-left-aligned .searchbar-input {
+//         border-radius: 18px !important;
+//     }
+//     .sear {
+   
+//     border-radius: 18px !important;
+// }
+
+
+// .day {
+//     font-size: 13px;
+//     text-align: center;
+//     color: #f8006f;
+//     font-weight: bold;
+// }
+// .date {
+//     font-size: 12px;
+//     text-align: right;
+//     margin: 0 0 0 0;
+//     min-height: 40px;
+//     padding: 3px;
+//     background: #fff;
+//     border: 1px solid #f1f1f1;
+//     position: relative;
+// }
+// .heading {
+//     text-align: center;
+//     font-weight: bold !important;
+//     font-size: 18px !important;
+//     color: #cb1a34;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+// .segment_nw {
+// 	margin: 10px 20%;
+// }
+// .heading_main {
+// 	padding: 0 16px;
+//     font-size: 16px;
+//     font-weight: 600;
+// }
+// .heading_int {
+// 	font-size: 17px !important;
+// 	margin: 0px 0 10px !important;
+// 	font-weight: 600 !important;
+// }
+// .segment-ios .segment-button {
+// 	-webkit-box-flex: 1;
+// 	-webkit-flex: 1;
+// 	-ms-flex: 1;
+// 	flex: 1;
+// 	width: 0;
+// 	height: 3.2rem;
+// 	border-width: 1px;
+// 	border-style: solid;
+// 	border-color: #cb1a34;
+// 	font-size: 1.3rem;
+// 	line-height: 3rem;
+// 	color: #cb1a34;
+// 	background-color: #fff;
+// }
+// .date.active {
+// 	background: #e1e1e1;
+// }
+// .visit {
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+// 	background: #665e60;
+// 	width: 100%;
+// 	text-align: center;
+// 	font-size: 8px;
+// 	color: #fff;
+// }
+// .btn_day {
+//     border-radius: 0;
+//     width: 100%;
+//     padding: 0;
+// }
+// .grid_calender.grid {
+// 	padding: 0px 0 2px;
+// 	background: #fff;
+// }
+// .user{
+//     .item {
+//         p {
+//             display: flex;
+//             margin-bottom: 10px;
+//             color: #000;
+//             white-space: initial;
+//         }
+//          img {
+//             width: auto;
+//             height: 15px;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//         }
+//     }
+// }
+
+
+
+
+// .banner img {
+//     width: 100%;
+// }
+
+// .banner_btn p {
+//     width: 60px;
+//     margin: 0 auto;
+//     background: #fff;
+//     color: #000;
+//     font-size: 12px;
+//     border-right: 1px solid #ccc;
+// }
+// .color_right {
+// 	float: right;
+// 	margin-right: 16px;
+// 	font-size: 12px;
+// 	color: #ff9703;
+// 	font-weight: normal;
+//     text-decoration: underline;
+//     padding-top: 4px;
+// }
+// .info_box {
+// 	text-align: center;
+// 	background: #fff;
+// 	border-radius: 8px;
+// 	padding: 10px;
+// }
+// .info_box p {
+// 	margin: 5px 0 0 0;
+// 	font-size: 11px;
+// }
+// .info_box img {
+// 	width: 30px;
+// }
+// .sear.searchbar {
+// 	background: #fff;
+// 	border-radius: 0 !important;
+// }
+// .all {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .all img {
+// 	width: 10px !important;
+// 	height: 6px !important;
+// 	margin-left: 10px;
+// }
+// .banner_btn p span {
+// 	font-size: 14px;
+// 	font-weight: normal;
+// }
+// .banner {
+//     position: relative;
+//     background: #ff9703;
+//     min-height: 125px;
+//     padding-top: 10px;
+// }
+// .label img {
+// 	width: auto;
+// 	height: 20px;
+//     margin-right: 8px;
+    
+// }
+// .list_nw{
+//     border-radius: 8px;
+//     overflow: hidden;
+//     background: #fff;
+//     margin: 16px;
+
+//     .label {
+//         margin: 0 !important;
+//         display: flex;
+//     }
+//     input {
+//         border: none;
+//     }
+// }
+// .banner_btn {
+    
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex;
+//     background: #fff;
+//     overflow: hidden;
+//     border-radius: 8px;
+// }
+// .gradient {
+// 	position: absolute;
+// 	top: 10px;
+// 	right: 10px;
+// 	width: 15px;
+// }
+// .back_info {
+// 	position: relative;
+// }
+// .back_info p {
+// 	position: absolute;
+// 	bottom: 0;
+// 	right: 10px;
+// 	background: #00000091;
+// 	color: #fff;
+// 	padding: 4px 10px;
+// 	border-radius: 10px;
+// 	text-align: center;
+// }
+// .flex-container {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex;
+//     overflow-x: auto;
+//     width: 100%;
+// }
+// .flex-container::-webkit-scrollbar { display: none;}
+// .box {
+//     width: 135px;
+//     -webkit-box-flex: 0;
+//     -webkit-flex: none;
+//     -ms-flex: none;
+//     flex: none;
+//     margin-right: 8px;
+// }
+// .main h2 {
+// 	font-size: 18px;
+// 	padding: 10px 0;
+// }
+// .color.color_2 span{
+//     //text-decoration: underline;
+//     padding-right: 3px;
+// }
+// }

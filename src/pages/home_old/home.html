@@ -1,0 +1,79 @@
+<!-- <ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+        <img src="assets/imgs/header/logo.png" height="30">
+      </button>
+    </ion-buttons>
+    <ion-title>Mi Visita</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="profile()">
+        <img src="assets/imgs/profile-user.png" height="22">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="segment_nw">
+    <ion-segment [(ngModel)]="typ">
+      <ion-segment-button value="day" (click)="filter('Today')">
+        Dia
+      </ion-segment-button>
+      <ion-segment-button value="week" (click)="filter('Week')">
+        Semana
+      </ion-segment-button>
+      <ion-segment-button value="month" (click)="filter('Month')">
+        Mes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div>
+    <ion-calendar #calendar1 [events]="visitEvents" [newevents]="dateselected" (onMonthSelect)="onMonthSelect($event)"
+      (onDaySelect)="onDaySelect($event)"></ion-calendar>
+  </div>
+
+ 
+
+  <h3 class="heading_main">Lista de proximas visitas</h3>
+  <div class="user" *ngFor="let c of clients">
+    <ion-row>
+      <ion-col col-12>
+        <ion-item no-lines [ngClass]="c.visit_data.is_clicked?'highlite-content':''">
+          <h6 class="heading_int" (click)="details(c.client)">{{c.client.client_name}}</h6>
+          <p (click)="details(c.client)">
+            <img src="assets/imgs/home/location-active.png">
+            {{c.client.permanent_location}}</p>
+          <p class="color" (click)="details(c.client)">
+            <img src="assets/imgs/home/calender.png">
+            {{c.visit_data.visite_date}}</p>
+
+          <p class="color color_2" style="text-decoration: underline;"
+            *ngFor="let p of c.client.client_contact | slice: 0:1" (click)="calling(p.phone)">
+            <img src="assets/imgs/home/phone.png"><span>{{p.phone}}</span>({{p.name}})</p>
+
+          <button ion-button color="primary" small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="sales(c)"><img src="assets/imgs/check.png">Finalizar visita</button>
+
+
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="product(c)">Lanzar pedido</button>
+
+          <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;padding: 0 5px;"
+            (click)="rechedule(c)">Reagendar Visita</button>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row *ngIf="clients.length==0" margin-top>
+    <ion-col col-12 text-center>
+      <div class="noDatadiv">
+        <ion-icon name="ios-search-outline"></ion-icon>
+        <p>Sin registros encontrados!</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content> -->

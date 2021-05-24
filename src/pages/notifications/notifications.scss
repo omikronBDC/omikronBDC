@@ -1,0 +1,59 @@
+page-notifications {
+    .content.content-ios {
+        background: #e1e1e1;
+    }
+    .img {
+        width: 30%;
+    }
+    .label {
+        padding: 0 16px;
+    }
+    .flex-top {
+        display: flex;
+        width: 100%;
+        background: #fff;
+        padding: 5px;
+        margin: 5px 0;
+    }
+    .flex {
+        display: flex;
+        background: #fff;
+        padding: 0 16px;
+    }
+    .left {
+        margin-right: 15px;
+    }
+    .left p {
+        margin: 0;
+        font-size: 10px;
+        line-height: 17px;
+    }
+    .right p{
+       margin: 0;
+       font-size: 10px;
+       line-height: 17px;
+    }
+    .user {
+        padding: 0 16px;
+    }
+    .icon img {
+        display: block;
+        margin: 0 15px 10px 15px;
+        width: 14px;
+    }
+    .price {
+        width: 12px;
+    }
+    .dat span {
+        background: #cb1a34;
+        font-size: 9px;
+        padding: 2px 7px;
+        border-radius: 29px !important;
+        margin: -1px 0 0 5px;
+        color: #fff;
+    }
+    h6{
+        font-weight: 600 !important;
+        font-size: 15px !important;  
+    }
+}

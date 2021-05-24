@@ -1,0 +1,11 @@
+page-map-view {
+    .fullmap {      
+        position: unset !important; 
+    }
+    .row-con{
+        position: relative !important;
+        z-index: 1111 !important;
+        margin-top: 40px !important;
+        background: white !important;
+    }
+}

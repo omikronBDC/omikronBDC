@@ -1,0 +1,50 @@
+page-map {
+	.fullscreen {
+        position:absolute !important;
+        height: 100%;
+        width:100%;
+        top:0px;
+        left:0px;
+    }
+    ion-title{
+        padding-left:40px !important;
+        .toolbar-title{
+            text-align:left !important;
+        }
+    }
+    ion-navbar{
+        min-height:55px !important;
+    }
+
+    .searchinput{
+        padding-left:20px;
+        font-size:16px;
+    }
+    ion-footer{
+        ion-toolbar{
+            min-height:55px !important;
+            padding-left:10px !important;
+        }
+    }
+
+    .locationsearch{
+        position:absolute;
+        width:100%;
+        left:0px;
+        top:0px;
+        margin:0px !important;
+       
+        button{
+            min-height:36px !important;
+            height:36px !important;
+            .label{
+                font-size:14px !important;
+                color:#506066;
+            }
+            
+        }
+    }
+    .toolbar-background{
+        background-color:#fff !important;
+    }
+}

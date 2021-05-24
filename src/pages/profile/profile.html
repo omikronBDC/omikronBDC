@@ -1,0 +1,332 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear icon-only style="margin:0px 10px;">
+        <img src="assets/imgs/header/logo.png" height="30">
+      </button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+    <!-- <ion-buttons end>
+    <button ion-button (click)="notify()">
+    <img src="assets/imgs/home/notification.png" height="15">
+    </button>
+  </ion-buttons> -->
+    <!-- <ion-buttons end>S
+    <button ion-button (click)="profile()">
+    <img src="assets/imgs/profile-user.png" height="22">
+    </button>
+  </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="back">
+
+
+
+
+  <div class="user" *ngIf="profile_info">
+    <ion-row>
+      <ion-col col-12 no-padding>
+
+        <ion-item no-lines style="align-items: baseline;">
+          <h6 class="heading_int" style="margin: 0 !important;">{{profile_info.name}} </h6>
+          <button ion-button item-end clear icon-only color="primary" small style="border-radius: 0;font-size: 12px;"
+            (click)="setting()">
+            <ion-icon name="md-settings"></ion-icon>
+          </button>
+
+
+        </ion-item>
+
+        <ion-item no-lines style="align-items: baseline;">
+          <p style="display:none">
+            <img src="assets/imgs/menulogo.png">
+            {{profile_info.company.company_name}}
+          </p>
+          <p class="color" (click)="calling(profile_info.phone)"><img
+              src="assets/imgs/home/phone.png">{{profile_info.phone}}</p>
+          <p class="color"><img src="assets/imgs/login/message.png">{{profile_info.email}}</p>
+
+          <button ion-button item-end color="primary" small style="border-radius: 0;font-size: 12px;" (click)="edit()">
+            Editar
+          </button>
+
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+
+
+  <ion-segment [(ngModel)]="typ">
+    <ion-segment-button value="Plan" class="cal_btn">
+      Panel
+    </ion-segment-button>
+    <ion-segment-button value="personnel" class="cal_btn">
+      Historico de pedidos
+    </ion-segment-button>
+    <ion-segment-button value="photos" class="cal_btn">
+      Historico de visitas
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div *ngIf="typ=='Plan'" class="list_plan">
+    <ion-row class="row_nw">
+      <ion-col col-6>
+        <div class="dash">
+          <h3>{{profile_info.visit_count}}</h3>
+          <p>Visitas</p>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="dash">
+          <h3>€{{profile_info.salseAmount | number: '1.0-2'}}</h3>
+          <p>Ventas</p>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="dash">
+          <h3>{{profile_info.visit_count_this_month}}</h3>
+          <p>Visitas planeadas <br>
+            este mes</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="typ=='personnel'" class="list_plan">
+    <!-- <ion-item no-lines class="item_head">
+      <button item-end ion-button color="light">August 2020</button>
+      
+    </ion-item> -->
+    <ion-row align-items-center>
+      <!-- <ion-col col-4>
+        <ion-datetime placeholder="Search by date" [(ngModel)]="order_Date" (ionChange)="order_dateChange('date')">
+        </ion-datetime>
+      </ion-col> -->
+      <ion-col col-4>
+        <ion-datetime placeholder="Buscar por mes" pickerFormat="MMM/YYYY" [(ngModel)]="order_month" (ionChange)="order_dateChange('month')" displayFormat="MMM YYYY">
+        </ion-datetime>
+      </ion-col>
+      <ion-col col-8 text-right>
+        <button ion-button small (click)="order_dateChange('')">Reiniciar</button>
+      </ion-col>
+      <!-- <ion-col col-4>
+        <ion-datetime placeholder="Search by year" pickerFormat="YYYY" [(ngModel)]="order_year" (ionChange)="order_dateChange('year')">
+        </ion-datetime>
+      </ion-col> -->
+    </ion-row>
+
+    <div *ngFor="let o of order_histories">
+      <p style="background: #fff;margin: 0;padding: 16px;">Fecha de pedido: {{o.create_date}} <span
+          style="float:right;">Nombre de cliente:{{o.client_name}}</span></p>
+
+      <div class="user">
+
+        <ion-row style="background: #fff;">
+          <!-- <ion-col col-4 no-padding>
+          <ion-item no-lines>
+            <img src="assets/imgs/detail.png" style="width: 100px;height: 100%;margin-bottom: 16px;">
+           <h6 class="heading_int">Client Note</h6>
+           <p style="white-space: normal;font-size: 12px;line-height: 17px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took</p>
+           
+   </ion-item>
+ </ion-col> -->
+          <ion-col col-12 no-padding>
+            <ion-item no-padding class="avtar_item avtar_item_right" *ngFor="let p of o.order_item">
+              <ion-avatar item-start>
+                <div class="img_avtar">
+                  <img src="assets/imgs/user.png">
+                </div>
+              </ion-avatar>
+
+
+              <h2>{{p.product_name}}</h2>
+              <!-- <p>Quantity: {{k.item_qty}}</p>
+     <p>{{k.item_title}} - price XEUR</p>
+    <button ion-button smaall clear item-end><b style="color: #000;">€{{k.item_price}}</b></button> -->
+              <ion-item no-padding class="avtar_item avtar_item_right item-con" *ngFor="let k of p.items" no-lines>
+                <!-- <p>Quantity: {{k.item_qty}}</p>
+      <p>{{k.item_title}} - price XEUR</p> -->
+
+                <!-- <h2>{{p.product_name}}</h2> -->
+                <p>{{k.product_title}} X {{k.item_qty}} X {{k.product_unit}}</p>
+
+                <button ion-button smaall clear item-end><b
+                    style="color: #000;">€{{k.item_total_price  | number : '1.0-2'}}</b></button>
+              </ion-item>
+            </ion-item>
+          </ion-col>
+          <!-- <ion-col col-12 no-padding>
+   
+ </ion-col> -->
+        </ion-row>
+        <ion-item no-lines style="padding: 0 16px;" class="total">
+          <p style="margin: 0;"><b>Total</b></p>
+          <p style="margin: 0;" item-end><b>€{{o.total_cost | number : '1.0-2'}}</b></p>
+          <button ion-button item-end color="primary" small style="border-radius: 0;font-size: 12px;"
+            (click)="visit_detail(o.order_id)">Detalle del pedido</button>
+        </ion-item>
+      </div>
+    </div>
+
+    <ion-row *ngIf="order_histories.length==0" margin-top>
+      <ion-col col-12 text-center>
+        <div class="noDatadiv">
+          <ion-icon name="ios-search-outline"></ion-icon>
+          <p>Sin registros encontrados!</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+  <div *ngIf="typ=='photos'" class="list_plan">
+    <!-- <ion-row>
+      <ion-col col-6></ion-col>
+      <ion-col text-right col-6>
+        <ion-datetime item-end placeholder="Search by date.." [(ngModel)]="visit_Date" (ionChange)="visit_dateChange()">
+        </ion-datetime>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row align-items-center>
+      <!-- <ion-col col-4>
+        <ion-datetime placeholder="Search by date" [(ngModel)]="visit_Date" (ionChange)="visit_dateChange('date')">
+        </ion-datetime>
+      </ion-col> -->
+      <ion-col col-4>
+        <ion-datetime placeholder="Search by Month" pickerFormat="MMM/YYYY" [(ngModel)]="visit_month"
+          (ionChange)="visit_dateChange('month')" displayFormat="MMM YYYY">
+        </ion-datetime>
+      </ion-col>
+      <ion-col col-8 text-right>
+        <button small ion-button (click)="visit_dateChange('')">Reset</button>
+      </ion-col>
+      <!-- <ion-col col-4>
+        <ion-datetime placeholder="Search by year" (ionChange)="visit_dateChange('year')" [(ngModel)]="visit_year"
+          pickerFormat="YYYY">
+        </ion-datetime>
+      </ion-col> -->
+    </ion-row>
+
+    <!-- new UI -->
+
+
+    <div class="user" *ngFor="let c of visit_histories">
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <h6 class="heading_int" (click)="details(c.client)">{{c.client.client_name}}</h6>
+            <p (click)="details(c.client)">
+              <img src="assets/imgs/home/location-active.png">
+              {{c.client.permanent_location}}</p>
+            <p class="" (click)="details(c.client)">
+              <img src="assets/imgs/home/calender.png">
+              {{c.visit_data.visite_date}}</p>
+
+            <p class="color_2" style="text-decoration: underline;"
+              *ngFor="let p of c.client.client_contact | slice: 0:1" (click)="calling(p.phone)">
+              <img src="assets/imgs/home/phone.png"><span>{{p.phone}}</span>({{p.name}})</p>
+
+
+            <button ion-button item-end color="primary" *ngIf="c.order_history[0]" small
+              style="border-radius: 0;font-size: 12px;" (click)="visit_detail(c.order_history[0].order_id,c)">Visita
+              Detalles</button>
+
+            <!-- <button ion-button color="primary" small style="border-radius: 0;font-size: 12px;" 
+                    (click)="sales(c)"><img src="assets/imgs/check.png">End visit</button>
+        
+                    <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;" 
+                    (click)="product(c)">Place order</button>
+        
+                    <button ion-button color="primary" outline small style="border-radius: 0;font-size: 12px;" 
+                    (click)="rechedule(c)">Reschedule visit</button> -->
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- ++++++++++++++++++++++++++++++++++ -->
+
+
+
+    <ion-row *ngIf="visit_histories.length==0" margin-top>
+      <ion-col col-12 text-center>
+        <div class="noDatadiv">
+          <ion-icon name="ios-search-outline"></ion-icon>
+          <p>Sin registros encontrados!</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+
+
+
+</ion-content>
+
+
+
+<!-- Old visit history UI -->
+<!-- <div *ngFor="let p of visit_histories" class="bg">
+    <ion-item no-padding no-lines>
+        <p style="margin: 0;">
+         <img src="assets/imgs/home/calender.png" style="margin:0 8px 0 16px; width: 12px;height: auto;">
+         Date : {{p.visit_data.visite_date}}</p>
+         <p item-end style="margin: 0;">Client Name:{{p.client.client_name}}</p>
+     </ion-item>
+  <div class="avtar_item" style="padding-top: 5px;padding-bottom: 5px;">                  
+    <h6 class="heading_int" style="padding:0;">Note</h6>
+    <p style="white-space: normal;font-size: 15px;line-height: 17px;margin-top: 5px;">
+    {{p.visit_data.note}}</p>
+  </div>
+
+
+  <div class="seprator" *ngFor="let o of p.order_history;let i = index">
+
+  <p style="background: #fff;margin: 0;padding:0 16px;font-weight: normal;"
+  >{{i+1}} Products Ordered</p>
+
+  <ion-col col-12 no-padding>
+    <ion-item no-padding class="avtar_item avtar_item_right"*ngFor="let t of o.order_item">
+      <ion-avatar item-start>
+        <div class="img_avtar">
+        <img src="assets/imgs/user.png">
+      </div> 
+      </ion-avatar>
+    
+  
+      <h2>{{t.product_name}}</h2>
+     <ion-item  no-padding class="avtar_item avtar_item_right item-con" *ngFor="let k of t.items" no-lines>
+       <p>{{k.item_qty}}x {{k.product_title}}</p>
+ 
+      <button ion-button smaall clear item-end><b style="color: #000;">€{{k.item_price}}</b></button>
+      </ion-item>
+    </ion-item>
+  </ion-col>
+
+
+ 
+
+    <div class="avtar_item" style="padding-top: 0;">
+    </div>
+
+  </div>
+</div> -->

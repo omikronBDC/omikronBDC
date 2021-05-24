@@ -1,0 +1,53 @@
+<ion-menu [content]="nav" type="overlay" persistent="false" side="right">
+    <ion-content>
+
+            <h2 padding text-xenter>Filtrar</h2>
+            
+
+            <ion-list no-lines class="list_item">
+                <label>Tipo de cliente
+</label>
+            <!-- <ion-item class="input_1" no-lines>
+              <ion-input type="password" placeholder=""></ion-input>
+            </ion-item> -->
+
+            <ion-item class="input_1" no-lines>
+              <ion-label>Tipo de cliente
+</ion-label>
+              <ion-select [(ngModel)]="cust_type" okText="OK" cancelText="Cancelar">
+              <ion-option *ngFor="let t of clientTypeList" [value]="t.id">{{t.name}}</ion-option>
+                <!-- <ion-option value="New">New</ion-option>
+                <ion-option value="Old">Old</ion-option> -->
+              </ion-select>
+            </ion-item>
+        
+        
+            <label>Region</label>
+            <ion-item class="input_1" no-lines>
+              <ion-label>Selecciona Region</ion-label>
+              <ion-select [(ngModel)]="region" okText="OK" cancelText="Cancelar">
+                <ion-option [value]="r.id" *ngFor="let r of regions">{{r.name}}</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <label>Cercano</label>
+            <ion-item no-padding >
+                <ion-range dualKnobs="false" pin="true" (ionChange)="distance_change()"
+                [(ngModel)]="distance" color="dark" no-padding class="rang-css">
+                  <ion-icon range-left small ></ion-icon>
+                  <ion-icon range-right></ion-icon>
+                </ion-range>
+            </ion-item>
+        
+        
+          </ion-list>
+
+        <div class="btns btns_2">
+        <button ion-button color="primary" small outline class="primary_btn" (click)="cancel()">Reiniciar</button>
+        <button ion-button color="primary" small (click)="client_filter()">Hecho</button>
+    </div>
+
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #nav id="nav" swipeBackEnabled="true"></ion-nav>

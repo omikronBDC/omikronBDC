@@ -1,0 +1,357 @@
+page-location {
+  .fullscreen {
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  ion-content {
+    // background-image: url(../assets/imgs/map.png);
+    // background-repeat: no-repeat;
+    // background-position-y: 40px;
+    // background-size: cover;
+  }
+
+  ion-title {
+    padding-left: 40px !important;
+    .toolbar-title {
+      text-align: left !important;
+    }
+  }
+  ion-navbar {
+    min-height: 55px !important;
+  }
+
+  .searchinput {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  ion-footer {
+    ion-toolbar {
+      min-height: 55px !important;
+      padding-left: 10px !important;
+    }
+  }
+
+  .locationsearch {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    margin: 0px !important;
+
+    button {
+      min-height: 36px !important;
+      height: 36px !important;
+      .label {
+        font-size: 14px !important;
+        color: #506066;
+      }
+    }
+  }
+  .toolbar-background {
+    background-color: #fff !important;
+  }
+
+  .searchbar-input-container {
+    position: relative;
+    display: block;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    height: 35px;
+    box-shadow: 0 1px 5px #c6c6c6;
+  }
+  .toolbar .searchbar-ios .searchbar-input {
+    background: #fff;
+    height: 35px;
+  }
+  .searchbar-ios .searchbar-search-icon {
+    left: 9px;
+    top: 9px;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+  .filter_item {
+    background: transparent;
+    .label {
+      margin: 0;
+    }
+    .searchbar {
+      background: none;
+      border: none;
+    }
+  }
+  .disable-hover.item-button.button.button-ios.button-clear.button-clear-ios {
+    height: auto;
+  }
+  .toolbar-background-ios {
+    background: map-get($colors, primary);
+  }
+  .toolbar-title {
+    font-weight: normal !important;
+    color: #cc1e37 !important;
+  }
+  .searchbar-ios.searchbar-left-aligned .searchbar-input {
+    border-radius: 18px !important;
+  }
+  .sear {
+    border-radius: 18px !important;
+  }
+
+  .user {
+    .item {
+      border-radius: 20px;
+      position: absolute;
+      top: 270px;
+      width: 80%;
+      right: 20px;
+      p {
+        display: flex;
+        margin-bottom: 7px;
+        color: #000;
+        font-size: 12px;
+      }
+      img {
+        width: auto;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .user.user_2 {
+    .item {
+      border-radius: 20px;
+      position: absolute;
+      top: 100px;
+      width: 80%;
+      left: 20px;
+      p {
+        display: flex;
+        margin-bottom: 7px;
+        color: #000;
+        font-size: 12px;
+      }
+      img {
+        width: auto;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .heading_int {
+    font-size: 15px !important;
+    margin: 0px 0 10px !important;
+    font-weight: 600 !important;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .banner_btn p {
+    width: 60px;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    border-right: 1px solid #ccc;
+  }
+  .color_right {
+    float: right;
+    margin-right: 16px;
+    font-size: 12px;
+    color: #ff9703;
+    font-weight: normal;
+    text-decoration: underline;
+    padding-top: 4px;
+  }
+  .info_box {
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  .info_box p {
+    margin: 5px 0 0 0;
+    font-size: 11px;
+  }
+  .info_box img {
+    width: 30px;
+  }
+  .sear.searchbar {
+    background: #fff;
+    border-radius: 0 !important;
+  }
+  .all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .all img {
+    width: 10px !important;
+    height: 6px !important;
+    margin-left: 10px;
+  }
+  .banner_btn p span {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .banner {
+    position: relative;
+    background: #ff9703;
+    min-height: 70px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  .label img {
+    width: auto;
+    height: 20px;
+    margin-right: 8px;
+  }
+  .list_nw {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    margin: 16px;
+
+    .label {
+      margin: 0 !important;
+      display: flex;
+    }
+    input {
+      border: none;
+    }
+  }
+  .banner_btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .gradient {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+  }
+  .back_info {
+    position: relative;
+  }
+  .back_info p {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background: #00000091;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .flex-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .flex-container::-webkit-scrollbar {
+    display: none;
+  }
+  .box {
+    width: 135px;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    margin-right: 8px;
+  }
+  .main h2 {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  .new {
+    margin: 20px auto;
+    .card {
+      margin: 0 16px 0 10px;
+      border-radius: 0;
+      padding: 0px 16px;
+    }
+    .item {
+      padding: 0;
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+  .alpha.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // info window css
+  ion-item.location_main p {
+    display: flex;
+    margin-bottom: 10px;
+    color: #000;
+    img {
+      height: 15px;
+      width: 15px;
+      object-fit: contain;
+      margin-right: 5px;
+    }
+  }
+
+  .btn_loc {
+    display: flex;
+    padding: 5px;
+    background: #cb1a34;
+    color: #fff;
+    img {
+      width: auto;
+      height: 15px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+  }
+  .gm-style-iw.gm-style-iw-c {
+    max-width: 480px !important;
+    width: 320px;
+  }
+  .btns_loc {
+    display: flex;
+    button {
+      width: 34.5%;
+      margin-right: 10px;
+      font-size: 10px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

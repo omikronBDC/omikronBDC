@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ForgotPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding class="back_img">
+
+	<div class="login_form">
+	<div class="logo">
+    <img src="assets/imgs/login/logo.png">
+		<p>Actualiza tu clave</p>
+	</div>
+
+	<ion-list>
+    <ion-item class="input_1" no-lines>
+      <input type="password" placeholder="Nueva clave" [(ngModel)]="new_pass">
+    </ion-item>
+
+    <ion-item class="input_1" no-lines>
+      <input type="password" placeholder="Confirmar nueva clave" [(ngModel)]="c_pass">
+    </ion-item>
+  </ion-list>
+
+  <div padding class="btn_grp">
+    <button ion-button color="primary" block (click)="submit()">Guardar</button>
+  </div>
+
+  <h5 style="text-align: right;font-size: 13px;font-weight: normal;color: #fff;text-transform: uppercase;" (click)="skip()">Pasar</h5>
+
+  </div>
+
+</ion-content>
